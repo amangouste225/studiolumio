@@ -1,0 +1,61 @@
+* {
+  padding: O;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Manrope", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.burger {
+  width: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .menu_active {
+    position: relative;
+    &::after {
+      transform: rotate(45deg);
+      opacity: 0.3;
+      top: 5px;
+    }
+    &::before {
+      transform: rotate(-45deg);
+      position: absolute;
+    }
+  }
+  &::after {
+    position: absolute;
+    height: 2px;
+    content: "";
+    width: 100%;
+    background-color: black;
+    top: 3px;
+    opacity: 0.3;
+    transition: all 0.3s cubic-bezier(0.7, 0, 0.84, 0);
+  }
+  &::before {
+    position: absolute;
+    height: 5px;
+    content: "";
+    width: 100%;
+    background-color: red;
+    top: -5px;
+    transition: all 0.3s cubic-bezier(0.7, 0, 0.84, 0);
+  }
+}
+
+.menu_active {
+  position: relative;
+}
+.menu_active::after {
+  transform: rotate(45deg);
+  content: "";
+  position: absolute;
+  top: -4px;
+}
