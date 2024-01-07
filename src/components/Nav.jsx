@@ -1,33 +1,53 @@
-import { BsCart2 } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { blur, navHeight, translate } from "./animations/anim";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
+const navMenu = [
+  { name: "home", href: "/" },
+  { name: "shop", href: "/shop" },
+  { name: "about us", href: "/about" },
+  { name: "lookbook", href: "/lookbook" },
+  { name: "Contact", href: "/contact" },
+];
+
+const getChars = (title, index) => {
+  let chars = [];
+  title.split("").forEach((char, id) => {
+    chars.push(
+      <motion.span
+        custom={[id * 0.02, (title.length - id) * 0.01]}
+        variants={translate}
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        key={index}
+      >
+        {char}
+      </motion.span>
+    );
+  });
+  return chars;
+};
+
 export const Nav = () => {
-  const [menu, setAnim] = useState(false);
-
-  const menuAnim = () => {
-    setAnim((prev) => !prev);
-  };
-
   return (
-    <div>
-      <header className=" fixed z-30 w-full flex h-16 justify-between bg-header px-3 items-center uppercase text-primary font-medium">
-        <div className="flex-1">props</div>
-        <div
-          className="flex-1 text-center flex justify-center gap-3 items-center cursor-pointer"
-          onClick={menuAnim}
-        >
-          <span className={`${menu ? "menu_active" : ""} burger`}></span>
-          menu
-        </div>
-        <div className="flex gap-16 flex-1 justify-end">
-          <div>shop</div>
-          <div className="flex justify-end items-center gap-3">
-            <BsCart2 />
-
-            <span className="inline-block">cart(0)</span>
-          </div>
-        </div>
-      </header>
-    </div>
+    <motion.div
+      variants={navHeight}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      className="absolute h-auto bg-header top-16 z-50 w-full"
+    >
+      <ul className="flex flex-wrap uppercase gap-x-5 gap-y-5 max-w-5xl p-5 tracking-site ">
+        {navMenu.map(({ name, href }) => (
+          <li key={name} className="text-nav overflow-hidden h-auto pr-4">
+            <Link to={`${href}`}>
+              <motion.p className="flex">{getChars(name)}</motion.p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
   );
 };
