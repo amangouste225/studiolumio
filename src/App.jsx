@@ -1,13 +1,13 @@
 import "./global.scss";
 
-import { Footer, Home, Nav } from "./components";
+import { Footer, Home, Header } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 Footer;
 function App() {
   return (
     <>
       <Router>
-        <Nav />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

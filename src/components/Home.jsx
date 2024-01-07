@@ -4,7 +4,7 @@ export const Home = () => {
   return (
     <div className="relative min-h-svh">
       <div className="absolute h-full w-screen top-0 left-0">
-        <h1 className="text-big uppercase tracking-site whitespace-nowrap leading-site align-top overflow-y-clip text-header absolute z-10 top-44">
+        <h1 className="text-big uppercase tracking-site whitespace-nowrap leading-site align-top overflow-y-clip text-header absolute z-10 top-20">
           props
         </h1>
         <video

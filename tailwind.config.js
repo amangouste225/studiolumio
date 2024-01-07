@@ -10,12 +10,13 @@ export default {
       fontSize: {
         primary: "max(13px, 1rem)",
         big: "32vw",
+        nav: "max(24px,5rem)",
       },
       fontFamily: {
         primary: "Manrope",
       },
       letterSpacing: {
-        site: "-.02em",
+        site: "-.05em",
       },
       lineHeight: {
         site: "1",
