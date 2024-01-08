@@ -1,11 +1,14 @@
 import { AnimatePresence } from "framer-motion";
 
 import { BsCart2 } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { opacity } from "./animations/anim";
 import { motion } from "framer-motion";
 import { Nav } from "./Nav";
 import { Link } from "react-router-dom";
+import { Footer } from "./Footer";
+import { useLocation } from "react-router-dom";
+
 export const Header = () => {
   const [menu, setAnim] = useState(false);
 
@@ -13,9 +16,15 @@ export const Header = () => {
     setAnim((prev) => !prev);
   };
 
+  const location = useLocation();
+
+  useEffect(() => {
+    setAnim(false);
+  }, [location]);
+
   return (
     <div className="w-screen">
-      <header className=" fixed z-30 w-full flex h-16 justify-between bg-header px-3 items-center uppercase text-primary font-medium">
+      <header className="absolute z-[80] w-full flex h-16 justify-between bg-header px-3 items-center uppercase text-primary font-medium">
         <div className="flex-1">
           <Link to="/"> props</Link>
         </div>
@@ -55,6 +64,7 @@ export const Header = () => {
       <AnimatePresence mode="wait">
         {menu && <Nav menu={menu} />}
       </AnimatePresence>
+      <Footer menu={menu} />
     </div>
   );
 };

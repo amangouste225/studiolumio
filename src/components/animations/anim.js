@@ -77,3 +77,18 @@ export const imageHover = {
     display: "none",
   },
 };
+
+export const blurBackground = {
+  initial: {
+    height: 0,
+    filter: "blur(0px)",
+  },
+  enter: {
+    height: "100vh",
+    transition,
+  },
+  exit: {
+    height: 0,
+    transition,
+  },
+};

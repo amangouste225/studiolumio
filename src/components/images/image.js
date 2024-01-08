@@ -1,6 +1,6 @@
-import chairs from "./chairs.webp";
-import tables from "./tables.webp";
-import lamps from "./lamps.webp";
+import chairs from "./abi.webp";
+import tables from "./bat.webp";
+import lamps from "./tables.webp";
 import hero from "./hero.webp";
 import looks from "./lookbook.webp";
 
