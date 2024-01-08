@@ -42,7 +42,7 @@ export const Header = () => {
         <motion.div
           variants={opacity}
           animate={menu ? "closed" : "menu"}
-          className="flex gap-16 flex-1 justify-end"
+          className="flex lg:gap-16 gap-4 flex-1 justify-end"
         >
           <div>shop</div>
           <div className="flex justify-end items-center gap-3">
