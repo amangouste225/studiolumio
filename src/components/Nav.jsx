@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { blur, imageHover, navHeight, translate } from "./animations/anim";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { chairs, tables, lamps, hero, looks } from "./images/image";
+import { chairs, tables, hero, looks, lamps } from "./images/image";
 import { FooterMenu } from "./FooterMenu";
 
 const navMenu = [
@@ -65,7 +65,7 @@ export const Nav = () => {
       initial="initial"
       animate="enter"
       exit="exit"
-      className="absolute block h-auto bg-header top-16 z-50 w-full overflow-hidden"
+      className="absolute block h-auto bg-header top-16 z-[160] w-full overflow-hidden"
     >
       <ul className="mt-10 p-2 flex gap-y-3 flex-wrap gap-5 uppercase lg:max-w-5xl max-w-xl tracking-site">
         {navMenu.map((title, index) => (
@@ -113,7 +113,7 @@ export const Nav = () => {
         ))}
       </ul>
 
-      <div className="relative px-5 max-w-6xl -bottom-32 h-12">
+      <div className="relative px-5 max-w-6xl md:-bottom-32 -bottom-10  h-12">
         <ul className="uppercase grid lg:grid-cols-4 grid-cols-2 lg:gap-20 gap-5 overflow-hidden items-center">
           <FooterMenu
             title="made by"
