@@ -19,7 +19,7 @@ export const navHeight = {
     height: 0,
   },
   enter: {
-    height: "425px",
+    height: "400px",
     transition,
   },
   exit: {
@@ -58,5 +58,22 @@ export const blur = {
     filter: "blur(0px)",
     opacity: 1,
     transition: { duration: 0.3 },
+  },
+};
+
+export const imageHover = {
+  initial: {
+    opacity: 0,
+    display: "none",
+  },
+  enter: {
+    opacity: 1,
+    transition,
+    display: "block",
+  },
+  exit: {
+    opacity: 0,
+    transition,
+    display: "none",
   },
 };
